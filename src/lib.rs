@@ -15,8 +15,7 @@ fn is_prime(num: u64) -> bool {
         let partial_num_range = num / 4 + 1;
         
         for i in 1..partial_num_range {
-            let divisor = 2 * i + 1;
-            if num % divisor == 0 {
+            if num % (2 * i + 1) == 0 {
                 res = false;
                 break;
             }
