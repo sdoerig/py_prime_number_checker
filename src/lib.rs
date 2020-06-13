@@ -5,10 +5,11 @@ fn is_prime(num: u64) -> bool {
     // Checks it a positive integer is prime and returns true
     // if it is. 
     // The algorithm is little optimized and just inteded for demonstrations.
-    if num <= 1 || num == 4 {
-        false
-    } else if num == 2 || num == 3 {
+    if num == 2 || num == 3 {
         true
+    } else if num % 2 == 0 || num <= 1 {
+        // even or smaller then one
+        false
     } else {
         let mut res = true;
         let partial_num_range = num / 4 + 1;
@@ -61,6 +62,8 @@ mod tests {
     #[test]
     fn test_small_non_primes() {
         assert_eq!(is_prime(4), false);
+        assert_eq!(is_prime(6), false);
+        assert_eq!(is_prime(8), false);
         assert_eq!(is_prime(49), false);
         assert_eq!(is_prime(21), false);
     }
