@@ -5,7 +5,7 @@ fn is_prime(num: u64) -> bool {
     // Checks it a positive integer is prime and returns true
     // if it is. 
     // The algorithm is little optimized and just inteded for demonstrations.
-    if num == 2 || num == 3 {
+    if num == 2 {
         true
     } else if num % 2 == 0 || num <= 1 {
         // even or smaller then one
