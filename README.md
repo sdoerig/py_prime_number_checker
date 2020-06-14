@@ -1,4 +1,4 @@
-# py_prime_prime_number_checker
+# py_prime_number_checker
 
 Note this is just for testing purposes to show how easy it is possible to gain a speedup in Python by writing CPU intensive stuff in a language like Rust.
 
