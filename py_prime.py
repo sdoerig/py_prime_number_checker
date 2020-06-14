@@ -1,6 +1,6 @@
 import sys
 sys.path.append('target/release')
-import py_prime_checker
+import libpy_prime_number_checker as py_prime_checker
 
 class PyPrime:
 
@@ -8,6 +8,11 @@ class PyPrime:
     def is_prime_by_rust(num):
         return py_prime_checker.is_prime(num)
 
+    @staticmethod
+    def is_prime_unoptimized_by_rust(num):
+        return py_prime_checker.is_prime_unoptimized(num)
+        
+    @staticmethod
     def is_prime_by_python(num):
         """
         Same algo in python
@@ -26,3 +31,16 @@ class PyPrime:
                     res = False
                     break
             return res
+
+    @staticmethod
+    def is_prime_unoptimized_by_python(num):
+        if num <= 1:
+            return False
+        else:
+            res = True
+        for i in range(2, num):
+            if num % i == 0:
+                res = False
+                break
+        return res
+
