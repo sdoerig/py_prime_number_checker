@@ -6,6 +6,7 @@ jobs:
   check:
     name: py_prime_number_check
     runs-on: ubuntu-latest
+    
     steps:
       - name: Install latest nightly
         uses: actions/checkout@v2
@@ -14,8 +15,4 @@ jobs:
             override: true
             components: rustfmt, clippy
 
-      # `cargo check` command here will use installed `nightly`
-      # as it is set as an "override" for current directory
-
-      - name: Run cargo check
-        run: cargo check
+      
