@@ -6,10 +6,16 @@ jobs:
   check:
     name: py_prime_number_check
     runs-on: ubuntu-latest
-    
     steps:
-      - name: Run cargo test
-        run: rustup install nightly; rustup default nightly; cargo test
-     
+      - name: Install latest nightly
+        uses: actions/checkout@v2
+        with:
+            toolchain: nightly
+            override: true
+            components: rustfmt, clippy
 
-      
+      # `cargo check` command here will use installed `nightly`
+      # as it is set as an "override" for current directory
+
+      - name: Run cargo check
+        run: rustup default nightly && cargo check
