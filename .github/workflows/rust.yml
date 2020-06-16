@@ -19,3 +19,5 @@ jobs:
 
       - name: Run cargo test
         run: rustup default nightly && cargo test
+      - name: Python3 test
+        run: rustup default nightly && cargo build --release && /usr/bin/python3 test_py_prime.py
