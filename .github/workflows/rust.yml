@@ -8,11 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Install latest nightly
-        uses: actions/checkout@v2
-        with:
-            toolchain: nightly
-            override: true
-            components: rustfmt, clippy
+      - name: Run cargo test
+        run: rustup install nightly; rustup default nightly; cargo test
+     
 
       
